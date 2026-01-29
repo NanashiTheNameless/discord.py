@@ -41,7 +41,7 @@ jobs:
       - name: Run Pyright
         uses: jakebailey/pyright-action@v2
         with:
-          version: '1.1.394'
+          version: '1.1.408'
           warnings: false
           no-comments: ${{ matrix.python-version != '3.x' }}
 
