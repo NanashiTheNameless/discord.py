@@ -219,7 +219,7 @@ class VoiceClient(VoiceProtocol):
         if not has_nacl:
             raise RuntimeError('PyNaCl library needed in order to use voice')
         if not has_dave:
-            raise RuntimeError('davey library needed in order to use voice')
+            _log.warning('davey library not found; voice will run without end-to-end encryption support')
 
         super().__init__(client, channel)
         state = client._connection

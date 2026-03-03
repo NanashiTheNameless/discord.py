@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "discord.py"
-description = "A Python wrapper for the Discord API"
+description = "MODIFIED A Python wrapper for the Discord API"
 readme = { file = "README.rst", content-type = "text/x-rst" }
 license = { file = "LICENSE" }
 requires-python = ">=3.10"
-authors = [{ name = "Rapptz" }]
+authors = [{ name = "Rapptz" },{ name = "NanashiTheNameless" }]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: MIT License",
@@ -28,16 +28,19 @@ classifiers = [
 dynamic = ["version", "dependencies"]
 
 [project.urls]
-Documentation = "https://discordpy.readthedocs.io/en/latest/"
-"Issue tracker" = "https://github.com/Rapptz/discord.py/issues"
+Documentation = "https://github.com/NanashiTheNameless/discord.py"
+"Issue tracker" = "https://github.com/NanashiTheNameless/discord.py/issues"
 
 [tool.setuptools.dynamic]
 dependencies = { file = "requirements.txt" }
 
 [project.optional-dependencies]
-voice = ["PyNaCl>=1.6.2,<1.7", "davey>=0.1.3"]
+voice = [
+    "PyNaCl>=1.6.2",
+    "davey>=0.1.4",
+    ]
 docs = [
-    "sphinx>=8.1.3",
+    "sphinx>=9.1.0",
     "sphinxcontrib_trio>=1.2.0",
     "sphinxcontrib-websupport>=2.0.0",
     "sphinxcontrib-applehelp>=2.0.0",
@@ -64,7 +67,10 @@ test = [
     "typing-extensions>=4.15.0,<5",
     "tzdata>=2025.3; sys_platform == 'win32'",
 ]
-dev = ["ruff>=0.15.2", "typing_extensions>=4.15.0,<5"]
+dev = [
+    "ruff>=0.15.2",
+    "typing_extensions>=4.15.0,<5",
+    ]
 
 [tool.setuptools]
 packages = [
@@ -89,10 +95,17 @@ line-ending = "lf"
 quote-style = "single"
 
 [tool.coverage.run]
-omit = ["discord/__main__.py", "discord/types/*", "*/_types.py"]
+omit = [
+    "discord/__main__.py",
+    "discord/types/*",
+    "*/_types.py",
+    ]
 
 [tool.coverage.report]
-exclude_lines = ["pragma: no cover", "@overload"]
+exclude_lines = [
+    "pragma: no cover",
+    "@overload",
+    ]
 
 [tool.pyright]
 include = [
@@ -104,7 +117,12 @@ include = [
     "discord/ext/commands",
     "discord/ext/tasks",
 ]
-exclude = ["**/__pycache__", "build", "dist", "docs"]
+exclude = [
+    "**/__pycache__",
+    "build",
+    "dist",
+    "docs",
+    ]
 reportUnnecessaryTypeIgnoreComment = "warning"
 reportUnusedImport = "error"
 pythonVersion = "3.10"

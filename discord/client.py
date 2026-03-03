@@ -342,7 +342,7 @@ class Client:
 
         if VoiceClient.warn_dave:
             VoiceClient.warn_dave = False
-            _log.warning('davey is not installed, voice will NOT be supported')
+            _log.warning('davey is not installed, end-to-end encrypted voice (DAVE) features will be unavailable')
 
     async def __aenter__(self) -> Self:
         await self._async_setup_hook()
