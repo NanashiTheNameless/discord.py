@@ -274,7 +274,7 @@ class ConnectionState(Generic[ClientT]):
 
         self.clear()
 
-    # For some reason Discord still sends emoji/sticker data in payloads
+    # For some reason Discord still sends expression data (emojis, stickers, and soundboard sounds) in payloads
     # This makes it hard to actually swap out the appropriate store methods
     # So this is checked instead, it's a small penalty to pay
     @property
